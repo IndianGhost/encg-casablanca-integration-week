@@ -1,0 +1,99 @@
+/* Blobs */
+
+/* blob */
+
+	.blob {
+		background: black;
+		border-radius: 50%;
+		box-shadow: 0 0 0 0 rgba(0, 0, 0, 1);
+		margin: 10px;
+		height: 20px;
+		width: 20px;
+		transform: scale(1);
+		animation: pulse-black 2s infinite;
+	}
+
+	@keyframes pulse-black {
+		0% {
+			transform: scale(0.95);
+			box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+		}
+		
+		70% {
+			transform: scale(1);
+			box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+		}
+		
+		100% {
+			transform: scale(0.95);
+			box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+		}
+	}
+
+	.blob.white {
+		background: white;
+		box-shadow: 0 0 0 0 rgba(255, 255, 255, 1);
+		animation: pulse-white 2s infinite;
+	}
+
+	@keyframes pulse-white {
+		0% {
+			transform: scale(0.95);
+			box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+		}
+		
+		70% {
+			transform: scale(1);
+			box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+		}
+		
+		100% {
+			transform: scale(0.95);
+			box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+		}
+	}
+
+/* each */
+
+#almas-blob {
+	position: absolute;
+	left: 87vh;
+    top: 70vh;
+}
+
+
+
+
+/* BOXES */
+
+.almas-box {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.almas-box .almas-box-text {
+  visibility: hidden;
+  width: auto;
+  max-width: 300px;
+  background-color: black;
+  text-align: left;
+  line-height: normal;
+  font-weight: normal;
+  border-radius: 6px;
+  padding: 20px 0 20px 0;
+  z-index: 1;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  
+  /* Fade in almas-box - takes 1 second to go from 0% to 100% opac: */
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.almas-box:hover .almas-box-text {
+  visibility: visible;
+  opacity: 1;
+}
