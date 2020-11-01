@@ -5,14 +5,14 @@
         <div class="ashade-aside-content">
             <div class="ashade-widget ashade-widget--about">
                 <div class="ashade-widget--about__head">
-                    <img src="{{ asset('img/general/owner-avatar-3.png') }}" alt="Andrew Shade">
+                    <img src="{{ asset('img/general/owner-avatar-3.png') }}" alt="Andrew Shade"/>
                     <h5>
                         <span>Casablanca</span>
                         Association Des Étudiants de l'ENCG
                     </h5>
                 </div>
                 <p>Une équipe de 26 étudiants véhiculés par la même passion et le même amour inconditionnel pour leur
-                    école. Si nous sommes ici, c'est pour faire entendre votre voix...</p>
+                    école. Si nous sommes ici, c'est pour faire entendre votre voix.</p>
                 <p class="align-right">
                     <a href="#" class="ashade-learn-more">En savoir plus</a>
                 </p>
@@ -44,20 +44,18 @@
                         <a href="https://www.instagram.com/adeencgcasa/" target="_blank">In</a>
                     </li>
                 </ul>
-                <p class="align-right">
-                    <a href="#" class="ashade-learn-more">Nous contacter</a>
-                </p>
             </div><!-- .ashade-widget -->
 
         </div><!-- .ashade-aside-content -->
     </div><!-- .ashade-aside-inner -->
 </aside>
 <!-- UI Elements -->
+<div class="ashade-home-block-overlay"></div>
 <div class="ashade-menu-overlay"></div>
 <div class="ashade-aside-overlay"></div>
 <div class="ashade-cursor is-inactive">
     <span class="ashade-cursor-circle"></span>
     <span class="ashade-cursor-slider"></span>
-    <span class="ashade-cursor-close ashade-cursor-label">Close</span>
+    <span class="ashade-cursor-close ashade-cursor-label">Fermé</span>
     <span class="ashade-cursor-zoom ashade-cursor-label">Zoom</span>
 </div>

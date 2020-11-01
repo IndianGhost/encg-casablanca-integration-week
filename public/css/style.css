@@ -968,6 +968,20 @@ nav.ashade-nav ul.main-menu li.current-menu-ancestor > a {
     color: rgba(255,255,255,1);
 }
 
+/* zack */
+
+.main-menu li i {
+	display: block;
+    text-align: center;
+    font-size: xx-large;
+}
+
+@media only screen and (max-width: 960px) {
+
+	.main-menu li i {
+	display: inline-block;}
+
+}
 
 /* 05. CONTENT
    ----------- */

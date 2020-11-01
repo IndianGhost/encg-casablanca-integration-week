@@ -608,48 +608,6 @@ ashade.init = function() {
 			$this.on('mouseenter', function() {
 				ashade.flocker.form_interract = true;
 			});
-
-			// $this.submit(function(e) {
-			// 	e.preventDefault();
-			// 	if (ashade.flocker.form_interract && ashade.flocker.field_interract && ashade.flocker.field_changed) {
-			// 		$this.addClass('is-in-action');
-			// 		formData = jQuery(this).serialize();
-			// 		jQuery.ajax({
-			// 			type: 'POST',
-			// 			url: $this.attr('action'),
-			// 			data: formData
-			// 		})
-			// 		.done(function(response) {
-			// 			$this.removeClass('is-in-action');
-			// 			$response.empty().removeClass('alert-danger').addClass('alert-success');
-			// 			$response.html('<span>' + response + '</span>');
-			// 			$this.find('input:not([type="submit"]), textarea').val('');
-			// 			ashade.flocker.form_interract  = false;
-			// 			ashade.flocker.field_interract = false;
-			// 			ashade.flocker.field_changed   = false;
-			// 		})
-			// 		.fail(function(data) {
-			// 			$this.removeClass('is-in-action');
-			// 			$response.empty().removeClass('alert-success').addClass('alert-danger');
-			// 			$response.html('<span>' + data.responseText + '</span>');
-			// 			ashade.flocker.form_interract  = false;
-			// 			ashade.flocker.field_interract = false;
-			// 			ashade.flocker.field_changed   = false;
-			// 		});
-			// 	} else {
-			// 		if ($this.attr('data-spam-message')) {
-			// 			var spam_message = '<span>'+ $this.attr('data-spam-message') +'</span>';
-			// 		} else {
-			// 			var spam_message = '<span>No user actions detected. Look like a spam bot.</span>';
-			// 		}
-			// 		ashade.flocker.form_interract  = false;
-			// 		ashade.flocker.field_interract = false;
-			// 		ashade.flocker.field_changed   = false;
-			// 		$this.find('input:not([type="submit"]), textarea').val('');
-			// 		$response.empty().removeClass('alert-success').addClass('alert-danger');
-			// 		$response.html(spam_message);
-			// 	}
-			// });
 		});
 	}
 
@@ -694,9 +652,7 @@ ashade.init = function() {
 	if (jQuery('.ashade-aside-overlay').length) {
 		ashade_mobile_header.append('\
 			<a class="ashade-aside-toggler" href="#">\
-				<span class="ashade-aside-toggler__icon01"></span>\
-				<span class="ashade-aside-toggler__icon02"></span>\
-				<span class="ashade-aside-toggler__icon03"></span>\
+				<i style="font-size: xx-large;" class="la la-outdent"></i>\
 			</a>');
 	}
 

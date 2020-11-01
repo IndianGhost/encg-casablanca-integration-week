@@ -37,9 +37,7 @@
     <div id="ashade-home-contacts">
         <div class="ashade-row">
             <div class="ashade-col col-12">
-                <p class="ashade-intro">Hello and welcome!<br>lorem ipsum dolor sit amet consectetuer adipiscing elit
-                    sed diam nonummy nibh euismod.
-                </p>
+                <p class="ashade-intro">Bienvenue sur la plateforme Welcome Week!</p>
             </div>
         </div><!-- .ashade-row -->
         <div class="ashade-row">
@@ -71,17 +69,19 @@
     <div id="ashade-home-works">
         <div class="ashade-row">
             <div class="ashade-col col-12">
-                <p class="ashade-intro">Hello agin!<br>Explorez nos événements et activités.</p>
+                <p class="ashade-intro">Bienvenue sur la plateforme Welcome Week!<br>Explorez nos événements et
+                    activités.
+                </p>
                 <div class="ashade-albums-grid ashade-grid ashade-grid-2cols is-masonry">
                     <div class="ashade-album-item ashade-grid-item">
                         <div class="ashade-album-item__image">
-                            <img src="{{ asset('img/espace/clubs.jpg') }}" alt="Clubs">
+                            <img src="{{ asset('img/espace/clubs.jpg') }}" alt="Clubs"/>
                         </div>
                         <h5>
                             <span>Espace</span>
                             Club et associations
                         </h5>
-                        <a href="#" class="ashade-album-item__link"></a>
+                        <a href="{{ route('clubs-space') }}" class="ashade-album-item__link"></a>
                     </div><!-- .ashade-album-item -->
                     <div class="ashade-album-item ashade-grid-item">
                         <div class="ashade-album-item__image">
@@ -95,7 +95,7 @@
                     </div><!-- .ashade-album-item -->
                     <div class="ashade-album-item ashade-grid-item">
                         <div class="ashade-album-item__image">
-                            <img src="{{ asset('img/espace/jeux.jpg') }}" alt="Jeux">
+                            <img src="{{ asset('img/espace/jeux.jpg') }}" alt="Jeux"/>
                         </div>
                         <h5>
                             <span>Espace</span>
