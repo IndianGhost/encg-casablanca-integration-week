@@ -49,8 +49,31 @@ class ClubsSpaceController extends Controller
      *
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function club_stand()
+    public function club_stand($id)
     {
-        return view('pages.club-stand');
+        $viewPath = 'pages.club-stand';
+
+        $club = Club::find($id);
+
+        $attachments = Attachment::where('club_id', $id)->get();
+
+        foreach ($attachments as $attachment) {
+            switch ($attachment->category) {
+                case 'STAND_FOREGROUND':
+                    $club->stand_foreground = $attachment->path;
+                    break;
+                case 'STAND_PRESENTATION_IMG':
+                    $club->stand_presentation_img = $attachment->path;
+                    break;
+                case 'STAND_VIDEO':
+                    $club->stand_video = $attachment->path;
+                    break;
+                case 'STAND_DOCUMENT':
+                    $club->stand_document = $attachment->path;
+                    break;
+            }
+        }
+
+        return view($viewPath, compact('club'));
     }
 }
