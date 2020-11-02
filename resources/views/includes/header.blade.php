@@ -10,10 +10,10 @@
             <nav class="ashade-nav">
                 <ul class="main-menu">
                     <li>
-                        <a href="#"><i class="la la-home"></i> Accueil</a>
+                        <a href="{{ route('home') }}"><i class="la la-home"></i> Accueil</a>
                     </li>
                     <li>
-                        <a href="#"><i class="la la-users"></i> Clubs</a>
+                        <a href="{{ route('clubs-space') }}"><i class="la la-users"></i> Clubs</a>
                     </li>
                     <li>
                         <a href="#"><i class="la la-desktop"></i> Webinaire</a>
@@ -31,7 +31,14 @@
                         <a href="#"><i class="la la-at"></i> Contacts</a>
                     </li>
                     <li>
-                        <a href="#"><i class="la la-sign-out"></i> Déconnexion</a>
+                        <a href="{{ route('logout') }}"
+                           onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();"><i
+                                class="la la-sign-out"></i> Déconnexion
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                        </a>
                     </li>
 
                     <li>

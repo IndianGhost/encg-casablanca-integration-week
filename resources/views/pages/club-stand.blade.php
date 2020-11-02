@@ -12,7 +12,7 @@
     <div class="ashade-page-title-wrap front">
         <h1 class="ashade-page-title">
             <span>Club</span>
-            {{ strtoupper($club->name) }}
+            {{ $club->name }}
         </h1>
     </div>
 

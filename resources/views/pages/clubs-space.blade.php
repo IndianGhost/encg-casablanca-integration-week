@@ -45,7 +45,7 @@
             <map name="image-map-xs">
 
                 @foreach($clubs as $club)
-                <a class="box" href="{{ route('club-stand', ['id' => $club->id]) }}">
+                <a class="box" href="{{ route('club-stand', ['id' => $club->club_id]) }}">
                     <div class="box-text">
                         <div class="box-text-logo">
                             <img src="{{ asset($club->area_hover_logo) }}"/>
