@@ -19,6 +19,10 @@ Auth::routes(['register' => false]);
 Route::get('/', 'HomeController@index')
     ->name('home');
 
+Route::get('/webinar', function (){
+    return view('pages.webinar');
+})->name('webinar');
+
 Route::group(['prefix' => '/clubs-space'], function () {
     Route::get('/', 'ClubsSpaceController@club_space')
         ->name('clubs-space');

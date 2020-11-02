@@ -16,7 +16,7 @@
                         <a href="{{ route('clubs-space') }}"><i class="la la-users"></i> Clubs</a>
                     </li>
                     <li>
-                        <a href="#"><i class="la la-desktop"></i> Webinaire</a>
+                        <a href="{{ route('webinar') }}"><i class="la la-desktop"></i> Webinaire</a>
                     </li>
                     <li>
                         <a href="#"><i class="la la-gamepad"></i> Jeux et concours</a>
