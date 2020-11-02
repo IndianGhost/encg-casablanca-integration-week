@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Club;
 use App\Game;
+use App\User;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 /**
  * Class UserController
@@ -24,6 +27,12 @@ class UserController extends Controller
         $this->middleware('auth');
     }
 
+    public function profile()
+    {
+        $user = Auth::user();
+        return view('pages.profile', compact('user'));
+    }
+
     public function subscribe_club($id)
     {
         $viewPath = 'pages.club-subscribed';
@@ -40,5 +49,28 @@ class UserController extends Controller
         $game = Game::find($id);
         $authenticated_user->games()->attach($game);
         return view($viewPath);
+    }
+
+    public function update_auth_user(Request $request)
+    {
+        $user = Auth::user();
+        if (!isset($request->telephone)) {
+            return redirect(route('profile'));
+        } else {
+            $q = User::where('user_id', '=', $user->user_id);
+//            dd(password_verify($request->password, $user->password));
+            if (isset($request->password) &&
+                isset($request->new_password) &&
+                password_verify($request->password, $user->password)) {
+
+                $q->update([
+                    'telephone' => $request->telephone,
+                    'password' => Hash::make($request->new_password)
+                ]);
+                return redirect(route('home'));
+            }
+            $q->update(['telephone' => $request->telephone]);
+            return redirect(route('home'));
+        }
     }
 }

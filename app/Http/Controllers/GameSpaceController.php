@@ -22,6 +22,7 @@ class GameSpaceController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+        $this->middleware('checkUserTel');
     }
 
     public function game_space()

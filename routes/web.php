@@ -19,15 +19,25 @@ Auth::routes(['register' => false]);
 Route::get('/', 'HomeController@index')
     ->name('home');
 
+
+Route::group(['prefix' => '/profile'], function () {
+    Route::get('/', 'UserController@profile')
+        ->name('profile');
+    Route::post('/user', 'UserController@update_auth_user')
+        ->name('update-auth-user');
+});
+
 Route::get('/webinar', function () {
     return view('pages.webinar');
-})->name('webinar');
+})->middleware('checkUserTel')
+    ->name('webinar');
 
 Route::group(['prefix' => '/games-space'], function () {
     Route::get('/', 'GameSpaceController@game_space')->name('games-space');
 
     Route::post('/subscribed/{id}', 'UserController@subscribe_game')
         ->where('id', '[0-9]+')
+        ->middleware('checkUserTel')
         ->name('game-subscribe');
 });
 
@@ -41,5 +51,6 @@ Route::group(['prefix' => '/clubs-space'], function () {
 
     Route::post('/subscribed/{id}', 'UserController@subscribe_club')
         ->where('id', '[0-9]+')
+        ->middleware('checkUserTel')
         ->name('club-subscribe');
 });

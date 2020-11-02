@@ -3,24 +3,22 @@
 namespace App\Http\Middleware;
 
 use Closure;
-use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 
-class RedirectIfAuthenticated
+class CheckUserTelephone
 {
     /**
      * Handle an incoming request.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \Closure  $next
-     * @param  string|null  $guard
      * @return mixed
      */
-    public function handle($request, Closure $next, $guard = null)
+    public function handle($request, Closure $next)
     {
-        if (Auth::guard($guard)->check()) {
-            return redirect('/profile');
+        if ($request->user()->telephone == null) {
+            return Redirect::to('/profile');
         }
-
         return $next($request);
     }
 }
