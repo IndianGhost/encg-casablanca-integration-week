@@ -32,10 +32,13 @@
 
 @yield('content')
 
+@section('footer')
 @include('includes.footer')
+@show
 
 @include('includes.aside-bar')
 
+@section('app-javascript')
 <!-- SCRIPTS -->
 <script src="{{ asset('js/jquery.min.js') }}"></script>
 <script src="{{ asset('js/gsap.min.js') }}"></script>
@@ -63,6 +66,7 @@
         }
     });
 </script>
+@show
 @yield('javascript')
 
 </body>

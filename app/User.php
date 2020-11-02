@@ -42,4 +42,26 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * The clubs that belong to the user.
+     */
+    public function clubs()
+    {
+        return $this->belongsToMany(Club::class,
+            'clubs_users',
+            'user_id',
+            'club_id');
+    }
+
+    /**
+     * The games that belong to the user
+     */
+    public function games()
+    {
+        return $this->belongsToMany(Game::class,
+            'games_users',
+            'user_id',
+            'game_id');
+    }
 }

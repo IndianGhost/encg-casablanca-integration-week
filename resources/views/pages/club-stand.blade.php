@@ -37,14 +37,24 @@
                                 {{ $club->short_description }}
                             </h2>
                             {!! nl2br($club->description) !!}
-
-                            <div class="ashade-contact-form__footer" style="justify-content: unset;">
-                                <div class="ashade-contact-form__response"></div>
-                                <div class="ashade-contact-form__submit">
-                                    <input style="letter-spacing: 2px;" type="submit" value="Devenir membre du club">
+                            @if($isMember)
+                                <div class="ashade-contact-form__footer" style="justify-content: unset;">
+                                    <div class="ashade-contact-form__response"></div>
+                                    <div class="ashade-contact-form__submit">
+                                        <input style="letter-spacing: 2px;cursor:not-allowed;" type="submit" value="Vous êtes un membre de ce club" readonly/>
+                                    </div>
                                 </div>
-                            </div>
-
+                            @else
+                                <form method="POST" action="{{ route('club-subscribe', ['id' => $club->club_id]) }}"
+                                      class="ashade-contact-form__footer" style="justify-content: unset;">
+                                    @csrf
+                                    <div class="ashade-contact-form__response"></div>
+                                    <div class="ashade-contact-form__submit">
+                                        <input style="letter-spacing: 2px;" type="submit"
+                                               value="Devenir membre du club"/>
+                                    </div>
+                                </form>
+                            @endif
 
                         </div>
                         <div class="ashade-col col-6 align-bottom">
@@ -67,7 +77,8 @@
             </a>
 
             <a>
-                <area data-fancybox href="{{ url('https://media.giphy.com/media/u47rGQ3iuDroKXMasR/giphy.gif') }}" target="" alt=""
+                <area data-fancybox href="{{ url('https://media.giphy.com/media/u47rGQ3iuDroKXMasR/giphy.gif') }}"
+                      target="" alt=""
                       title="Welcome Message" coords="1189,500,87" shape="circle">
             </a>
 

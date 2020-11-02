@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Attachment;
 use App\Club;
+use Illuminate\Support\Facades\Auth;
 
 /**
  * Class ClubsSpaceController
@@ -55,6 +56,8 @@ class ClubsSpaceController extends Controller
 
         $club = Club::find($id);
 
+        $isMember = $club->users->contains(Auth::id());
+
         $attachments = Attachment::where('club_id', $id)->get();
 
         foreach ($attachments as $attachment) {
@@ -74,6 +77,10 @@ class ClubsSpaceController extends Controller
             }
         }
 
-        return view($viewPath, compact('club'));
+        return view($viewPath)
+            ->with([
+                'club' => $club,
+                'isMember' => $isMember
+            ]);
     }
 }

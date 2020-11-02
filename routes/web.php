@@ -26,4 +26,8 @@ Route::group(['prefix' => '/clubs-space'], function () {
     Route::get('/stand/{id}', 'ClubsSpaceController@club_stand')
         ->where('id', '[0-9]+')
         ->name('club-stand');
+
+    Route::post('/subscribed/{id}', 'UserController@subscribe_club')
+        ->where('id', '[0-9]+')
+        ->name('club-subscribe');
 });
