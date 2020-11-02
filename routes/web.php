@@ -19,9 +19,17 @@ Auth::routes(['register' => false]);
 Route::get('/', 'HomeController@index')
     ->name('home');
 
-Route::get('/webinar', function (){
+Route::get('/webinar', function () {
     return view('pages.webinar');
 })->name('webinar');
+
+Route::group(['prefix' => '/games-space'], function () {
+    Route::get('/', 'GameSpaceController@game_space')->name('games-space');
+
+    Route::post('/subscribed/{id}', 'UserController@subscribe_game')
+        ->where('id', '[0-9]+')
+        ->name('game-subscribe');
+});
 
 Route::group(['prefix' => '/clubs-space'], function () {
     Route::get('/', 'ClubsSpaceController@club_space')

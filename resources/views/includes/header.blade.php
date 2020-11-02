@@ -19,7 +19,7 @@
                         <a href="{{ route('webinar') }}"><i class="la la-desktop"></i> Webinaire</a>
                     </li>
                     <li>
-                        <a href="#"><i class="la la-gamepad"></i> Jeux et concours</a>
+                        <a href="{{ route('games-space') }}"><i class="la la-gamepad"></i> Jeux et concours</a>
                     </li>
                     <li>
                         <a href="#"><i class="la la-camera"></i> Visite 360</a>

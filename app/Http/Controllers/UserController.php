@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Club;
+use App\Game;
 use Illuminate\Support\Facades\Auth;
 
 /**
@@ -29,6 +30,15 @@ class UserController extends Controller
         $authenticated_user = Auth::user();
         $club = Club::find($id);
         $authenticated_user->clubs()->attach($club);
+        return view($viewPath);
+    }
+
+    public function subscribe_game($id)
+    {
+        $viewPath = 'pages.game-subscribed';
+        $authenticated_user = Auth::user();
+        $game = Game::find($id);
+        $authenticated_user->games()->attach($game);
         return view($viewPath);
     }
 }
