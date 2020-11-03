@@ -16,20 +16,22 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes(['register' => false]);
 
-Route::get('/', 'HomeController@index')
-    ->name('home');
+Route::get('/', 'HomeController@index')->name('home');
 
 
 Route::group(['prefix' => '/profile'], function () {
+
     Route::get('/', 'UserController@profile')
         ->name('profile');
+
     Route::post('/user', 'UserController@update_auth_user')
         ->name('update-auth-user');
 });
 
 Route::get('/webinar', function () {
     return view('pages.webinar');
-})->middleware('checkUserTel')
+})->middleware('auth')
+    ->middleware('checkUserTel')
     ->name('webinar');
 
 Route::group(['prefix' => '/games-space'], function () {
@@ -42,8 +44,7 @@ Route::group(['prefix' => '/games-space'], function () {
 });
 
 Route::group(['prefix' => '/clubs-space'], function () {
-    Route::get('/', 'ClubsSpaceController@club_space')
-        ->name('clubs-space');
+    Route::get('/', 'ClubsSpaceController@club_space')->name('clubs-space');
 
     Route::get('/stand/{id}', 'ClubsSpaceController@club_stand')
         ->where('id', '[0-9]+')
