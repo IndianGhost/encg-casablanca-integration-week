@@ -89,9 +89,9 @@
                         </div>
                         <h5>
                             <span>Espace</span>
-                            Conférences
+                            Webinaire
                         </h5>
-                        <a href="#" class="ashade-album-item__link"></a>
+                        <a href="{{ route('webinar') }}" class="ashade-album-item__link"></a>
                     </div><!-- .ashade-album-item -->
                     <div class="ashade-album-item ashade-grid-item">
                         <div class="ashade-album-item__image">
@@ -101,7 +101,7 @@
                             <span>Espace</span>
                             Jeux et concours
                         </h5>
-                        <a href="#" class="ashade-album-item__link"></a>
+                        <a href="{{ route('games-space') }}" class="ashade-album-item__link"></a>
                     </div><!-- .ashade-album-item -->
                     <div class="ashade-album-item ashade-grid-item">
                         <div class="ashade-album-item__image">
