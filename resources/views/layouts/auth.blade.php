@@ -20,7 +20,22 @@
 
     <!-- Icon -->
     <link rel="icon" href="{{ asset('img/favicon.png') }}" sizes="32x32"/>
-    @yield('style')
+
+@yield('style')
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="{{ url('https://www.googletagmanager.com/gtag/js?id=G-20FQXYE8CZ') }}"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-20FQXYE8CZ');
+    </script>
 </head>
 <body class="has-spotlight ashade-smooth-scroll">
 @yield('content')

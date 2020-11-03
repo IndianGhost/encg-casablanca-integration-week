@@ -25,7 +25,22 @@
 
     <!-- Icon -->
     <link rel="icon" href="{{ asset('img/favicon.png') }}" sizes="32x32"/>
-    @yield('style')
+
+@yield('style')
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="{{ url('https://www.googletagmanager.com/gtag/js?id=G-20FQXYE8CZ') }}"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-20FQXYE8CZ');
+    </script>
 </head>
 <body class="ashade-home-template has-spotlight ashade-smooth-scroll">
 @include('includes.header')
@@ -33,39 +48,40 @@
 @yield('content')
 
 @section('footer')
-@include('includes.footer')
+    @include('includes.footer')
 @show
 
 @include('includes.aside-bar')
 
 @section('app-javascript')
-<!-- SCRIPTS -->
-<script src="{{ asset('js/jquery.min.js') }}"></script>
-<script src="{{ asset('js/gsap.min.js') }}"></script>
-<script src="{{ asset('js/masonry.min.js') }}"></script>
-<script src="{{ asset('js/core.js') }}"></script>
-<!-- Map Resize -->
-<script type="text/javascript" src="{{ asset('js/imageMapResizer.min.js') }}"></script>
-<script type="text/javascript">
-    $(document).ready(function () {
-        $('map').imageMapResize();
-    });
-</script>
-<!-- END -->
+    <!-- SCRIPTS -->
+    <script src="{{ asset('js/jquery.min.js') }}"></script>
+    <script src="{{ asset('js/gsap.min.js') }}"></script>
+    <script src="{{ asset('js/masonry.min.js') }}"></script>
+    <script src="{{ asset('js/core.js') }}"></script>
+    <!-- Map Resize -->
+    <script type="text/javascript" src="{{ asset('js/imageMapResizer.min.js') }}"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('map').imageMapResize();
+        });
+    </script>
+    <!-- END -->
 
-<!-- FancyBox -->
-<script src="{{ url('https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js') }}"></script>
-<script type="text/javascript">
-    $('[data-fancybox]').fancybox({
-        youtube: {
-            controls: 0,
-            showinfo: 0
-        },
-        vimeo: {
-            color: 'f00'
-        }
-    });
-</script>
+    <!-- FancyBox -->
+    <script
+        src="{{ url('https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js') }}"></script>
+    <script type="text/javascript">
+        $('[data-fancybox]').fancybox({
+            youtube: {
+                controls: 0,
+                showinfo: 0
+            },
+            vimeo: {
+                color: 'f00'
+            }
+        });
+    </script>
 @show
 @yield('javascript')
 
