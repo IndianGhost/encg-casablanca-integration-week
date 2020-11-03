@@ -58,7 +58,6 @@ class UserController extends Controller
             return redirect(route('profile'));
         } else {
             $q = User::where('user_id', '=', $user->user_id);
-//            dd(password_verify($request->password, $user->password));
             if (isset($request->password) &&
                 isset($request->new_password) &&
                 password_verify($request->password, $user->password)) {
