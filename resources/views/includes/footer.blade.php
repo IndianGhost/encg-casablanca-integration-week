@@ -15,7 +15,7 @@
                 </li>
                 <li class="social-item">
                     <a href="{{ url('https://www.instagram.com/adeencgcasa/') }}" target="_blank">
-                        <i class="social-icons la la-linkedin"></i>
+                        <i class="social-icons la la-instagram"></i>
                     </a>
                 </li>
             </ul>
