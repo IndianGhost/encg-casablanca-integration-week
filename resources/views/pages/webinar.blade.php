@@ -19,19 +19,19 @@
             <map name="image-map">
 
                 <a>
-                    <area data-fancybox href="{{ url('https://www.youtube.com/watch?v=P8OoLtebnsY') }}" target="" alt=""
+                    <area data-fancybox href="{{ url('https://www.youtube.com/watch?v=ebuWKvGbJ00&feature=youtu.be') }}" target="" alt=""
                           title=""
                           coords="839,551,1164,348" shape="rect">
                 </a>
 
                 <a>
-                    <area data-fancybox href="{{ url('https://www.youtube.com/watch?v=P8OoLtebnsY') }}" target="" alt=""
+                    <area data-fancybox href="{{ url('https://www.youtube.com/watch?v=ebuWKvGbJ00&feature=youtu.be') }}" target="" alt=""
                           title=""
                           coords="801,383,596,514" shape="rect">
                 </a>
 
                 <a>
-                    <area data-fancybox href="{{ url('https://www.youtube.com/watch?v=P8OoLtebnsY') }}" target="" alt=""
+                    <area data-fancybox href="{{ url('https://www.youtube.com/watch?v=ebuWKvGbJ00&feature=youtu.be') }}" target="" alt=""
                           title=""
                           coords="1192,510,1407,385" shape="rect">
                 </a>
@@ -51,17 +51,17 @@
             <map name="image-map-xs">
 
                 <a>
-                    <area data-fancybox href="{{ url('https://www.youtube.com/watch?v=P8OoLtebnsY') }}" target="" alt="" title=""
+                    <area data-fancybox href="{{ url('https://www.youtube.com/watch?v=ebuWKvGbJ00&feature=youtu.be') }}" target="" alt="" title=""
                           coords="438,885,723,712" shape="rect">
                 </a>
 
                 <a>
-                    <area data-fancybox href="{{ url('https://www.youtube.com/watch?v=P8OoLtebnsY') }}" target="" alt="" title=""
+                    <area data-fancybox href="{{ url('https://www.youtube.com/watch?v=ebuWKvGbJ00&feature=youtu.be') }}" target="" alt="" title=""
                           coords="743,855,930,740" shape="rect">
                 </a>
 
                 <a>
-                    <area data-fancybox href="{{ url('https://www.youtube.com/watch?v=P8OoLtebnsY') }}" target="" alt="" title=""
+                    <area data-fancybox href="{{ url('https://www.youtube.com/watch?v=ebuWKvGbJ00&feature=youtu.be') }}" target="" alt="" title=""
                           coords="228,852,410,741" shape="rect">
                 </a>
 
