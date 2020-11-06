@@ -105,3 +105,16 @@
 	float: right;
     width: 60%;
 }
+
+
+@media (max-width: 760px) {
+  .box .box-text {
+    width: auto;
+    max-width: 80%;
+    position: fixed;
+    left: 10%;
+    top: 80px;
+    transform: translate(-5%, 0);
+    transition: opacity 1s;
+    }
+}
