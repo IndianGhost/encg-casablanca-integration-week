@@ -39,7 +39,7 @@
                                             <div class="ashade-contact-form__response"></div>
                                             <div class="ashade-contact-form__submit">
                                                 <input style="letter-spacing: 2px;cursor: not-allowed;" type="submit"
-                                                       value="Déjà inscrit">
+                                                       value="Votre demande a été envoyé">
                                             </div>
                                         </div>
                                     @else
@@ -97,7 +97,7 @@
                                             <div class="ashade-contact-form__response"></div>
                                             <div class="ashade-contact-form__submit">
                                                 <input style="letter-spacing: 2px;cursor:not-allowed;" type="submit"
-                                                       value="Déjà inscrit">
+                                                       value="Votre demande a été envoyé">
                                             </div>
                                         </div>
                                     @else
