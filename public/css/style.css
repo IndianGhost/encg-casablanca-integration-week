@@ -3168,3 +3168,6 @@ p.ashade-intro {
 .ashade-content-wrap.ashade-home-background.ashade-page-background.is-image {
     opacity: 1 !important;
 }
+.read-only {
+    cursor: not-allowed;
+}

@@ -55,3 +55,17 @@ Route::group(['prefix' => '/clubs-space'], function () {
         ->middleware('checkUserTel')
         ->name('club-subscribe');
 });
+
+// temporary route
+Route::get('/contact', function () {
+    return view('pages.contact');
+})->middleware('auth')
+    ->middleware('checkUserTel')
+    ->name('contact')
+;
+// temporary route
+Route::get('/visite', function() {
+    return view('pages.visite');
+})->middleware('auth')
+->middleware('checkUserTel')
+->name('visite');

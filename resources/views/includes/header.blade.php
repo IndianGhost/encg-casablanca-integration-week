@@ -22,13 +22,13 @@
                         <a href="{{ route('games-space') }}"><i class="la la-gamepad"></i> Jeux et concours</a>
                     </li>
                     <li>
-                        <a href="#"><i class="la la-camera"></i> Visite 360</a>
+                        <a href="{{ route('visite') }}"><i class="la la-camera"></i> Visite 360</a>
                     </li>
                     <li>
                         <a href="{{ route('profile') }}"><i class="la la-user"></i> Profile</a>
                     </li>
                     <li>
-                        <a href="#"><i class="la la-at"></i> Contacts</a>
+                        <a href="{{ route('contact') }}"><i class="la la-at"></i> Contacts</a>
                     </li>
                     <li>
                         <a href="{{ route('logout') }}"

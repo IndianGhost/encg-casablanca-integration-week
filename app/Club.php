@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 /**
  * Class Club
@@ -45,7 +46,9 @@ class Club extends Model
     ];
 
     /**
-     * The users that belong to the club.
+     * The list of {@link User} that belong to the current {@link Club}
+     *
+     * @return BelongsToMany
      */
     public function users()
     {
@@ -56,7 +59,9 @@ class Club extends Model
     }
 
     /**
-     * The attachments that belong to the club
+     * The list of {@link Attachment} that belong to the current {@link Club}
+     *
+     * @return BelongsToMany
      */
     public function attachments()
     {

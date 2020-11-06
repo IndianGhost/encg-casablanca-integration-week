@@ -1,4 +1,4 @@
-@extends('layouts.profile-layout')
+@extends('layouts.second-layout')
 
 @section('content')
     <!-- Content -->

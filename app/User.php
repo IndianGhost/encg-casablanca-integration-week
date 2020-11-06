@@ -2,9 +2,16 @@
 
 namespace App;
 
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
+/**
+ * Class User
+ * @package App
+ *
+ * @author laravel
+ */
 class User extends Authenticatable
 {
     use Notifiable;
@@ -44,7 +51,9 @@ class User extends Authenticatable
     ];
 
     /**
-     * The clubs that belong to the user.
+     * The list of {@link Club} that belong to the current {@link User}
+     *
+     * @return BelongsToMany
      */
     public function clubs()
     {
@@ -55,7 +64,9 @@ class User extends Authenticatable
     }
 
     /**
-     * The games that belong to the user
+     * The list of {@link Game} that belong to the current {@link User}
+     *
+     * @return BelongsToMany
      */
     public function games()
     {
@@ -63,5 +74,15 @@ class User extends Authenticatable
             'games_users',
             'user_id',
             'game_id');
+    }
+
+    /**
+     * The list of {@link Contact} that belongs to the current {@link User}
+     *
+     * @return BelongsToMany
+     */
+    public function contacts()
+    {
+        return $this->belongsToMany(Contact::class);
     }
 }

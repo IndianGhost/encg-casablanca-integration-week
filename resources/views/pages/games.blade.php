@@ -38,8 +38,8 @@
                                         <div class="ashade-contact-form__footer" style="justify-content: unset;">
                                             <div class="ashade-contact-form__response"></div>
                                             <div class="ashade-contact-form__submit">
-                                                <input style="letter-spacing: 2px;cursor: not-allowed;" type="submit"
-                                                       value="Votre demande a été envoyé">
+                                                <input class="read-only" style="letter-spacing: 2px;" type="submit"
+                                                       value="Votre demande a été envoyé" readonly>
                                             </div>
                                         </div>
                                     @else
@@ -96,8 +96,8 @@
                                         <div class="ashade-contact-form__footer" style="justify-content: unset;">
                                             <div class="ashade-contact-form__response"></div>
                                             <div class="ashade-contact-form__submit">
-                                                <input style="letter-spacing: 2px;cursor:not-allowed;" type="submit"
-                                                       value="Votre demande a été envoyé">
+                                                <input class="read-only" style="letter-spacing: 2px;" type="submit"
+                                                       value="Votre demande a été envoyé" readonly>
                                             </div>
                                         </div>
                                     @else

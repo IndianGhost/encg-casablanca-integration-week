@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 /**
  * Class Attachment
@@ -47,7 +48,9 @@ class Attachment extends Model
     ];
 
     /**
-     * Get the club that owns the attachment.
+     * The {@link Club} that owns the current {@link Attachment}
+     *
+     * @return BelongsTo
      */
     public function club()
     {
@@ -55,7 +58,9 @@ class Attachment extends Model
     }
 
     /**
-     * Get the game that owns the attachments
+     * The {@link Game} that owns the current {@link Attachment}
+     *
+     * @return BelongsTo
      */
     public function game()
     {
