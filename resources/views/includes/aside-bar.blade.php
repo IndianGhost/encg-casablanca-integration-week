@@ -27,7 +27,7 @@
                     </li>
                     <li>
                         <i class="ashade-contact-icon la la-phone"></i>
-                        <a href="{{ url('tel:+11234567890') }}">(+212) 5 22 66 08 52</a>
+                        <a href="{{ url('tel:+212522660852') }}">(+212) 5 22 66 08 52</a>
                     </li>
                     <li>
                         <i class="ashade-contact-icon la la-envelope"></i>

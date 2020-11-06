@@ -55,11 +55,11 @@
                                     </li>
                                     <li>
                                         <i class="ashade-contact-icon la la-phone"></i>
-                                        <a href="tel:+11234567890">(+212) 5 22 66 08 52</a>
+                                        <a href="{{ url('tel:+212522660852') }}">(+212) 5 22 66 08 52</a>
                                     </li>
                                     <li>
                                         <i class="ashade-contact-icon la la-envelope"></i>
-                                        <a href="mailto:a.shade@example.com">contact@adeencgc.com</a>
+                                        <a href="{{ url('mailto:contact@adeencgc.com') }}">contact@adeencgc.com</a>
                                     </li>
                                 </ul>
                             </div><!-- .ashade-contact-details -->
@@ -93,22 +93,7 @@
                 </section>
             </div><!-- .ashade-content -->
 
-            <!-- Footer -->
-            <footer id="ashade-footer">
-                <div class="ashade-footer-inner">
-                    <div class="ashade-footer__socials">
-                        <ul class="ashade-socials">
-                            <li><a href="https://web.facebook.com/ADE.ENCGC/" target="_blank">Fb</a></li>
-                            <li><a href="https://www.twitter.com/" target="_blank">Tw</a></li>
-                            <li><a href="https://www.youtube.com/user/AdeEncgCasablanca" target="_blank">Yt</a></li>
-                            <li><a href="https://www.instagram.com/adeencgcasa/" target="_blank">In</a></li>
-                        </ul>
-                    </div>
-                    <div class="ashade-footer__copyright">
-                        Copyright &copy; 2020. All Rights Reserved.
-                    </div>
-                </div>
-            </footer>
+            @include('includes.footer')
         </div><!-- .ashade-content-scroll -->
     </main>
 
