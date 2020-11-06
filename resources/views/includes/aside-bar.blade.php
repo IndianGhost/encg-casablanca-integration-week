@@ -34,7 +34,6 @@
                         <a href="{{ url('mailto:contact@adeencg.com') }}">contact@adeencgc.com</a>
                     </li>
                     <li class="ashade-contact-socials">
-                        <i class="ashade-contact-icon la la-share-alt"></i>
                         <a href="{{ url('https://web.facebook.com/ADE.ENCGC/') }}" target="_blank">
                             <i class="social-icons la la-facebook"></i>
                         </a>

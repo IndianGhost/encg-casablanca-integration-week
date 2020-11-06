@@ -46,21 +46,30 @@
                     <span>Étape 1</span>
                     Les Clubs
                 </h4>
-                <img src="{{ url('https://cdn.onlinewebfonts.com/svg/img_254618.png') }}" alt=""/>
+                <video controls="" muted="" id="tutorial-1" width="100%">
+                    <source src="{{ url('video/tutorials/clubs.mp4') }}" type="video/mp4">
+                    Your browser does not support HTML5 video.
+                </video>
             </div>
             <div class="ashade-col col-4">
                 <h4 class="text-center ashade-contact-details__title">
                     <span>Étape 2</span>
                     Les Jeux
                 </h4>
-                <img src="{{ url('https://cdn.onlinewebfonts.com/svg/img_254618.png') }}" alt=""/>
+                <video controls="" muted="" id="tutorial-2" width="100%">
+                    <source src="{{ url('video/tutorials/jeux.mp4') }}" type="video/mp4">
+                    Your browser does not support HTML5 video.
+                </video>
             </div>
             <div class="ashade-col col-4">
                 <h4 class="text-center ashade-contact-details__title">
                     <span>Étape 3</span>
                     L'inscription
                 </h4>
-                <img src="{{ url('https://cdn.onlinewebfonts.com/svg/img_254618.png') }}" alt=""/>
+                <video controls="" muted="" id="tutorial-3" width="100%">
+                    <source src="{{ url('video/tutorials/inscription.mp4') }}" type="video/mp4">
+                    Your browser does not support HTML5 video.
+                </video>
             </div>
         </div>
     </div><!-- #ashade-tutorial-contacts -->
