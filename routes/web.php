@@ -58,8 +58,4 @@ Route::group(['prefix' => '/clubs-space'], function () {
 
 Route::get('/contact', 'ContactController@index')->name('contact');
 
-// temporary route
-Route::get('/visite', function() {
-    return view('pages.visite');
-})->middleware('auth')->middleware('checkUserTel')
-->name('visite');
+Route::get('/visite', 'VisitController@index')->name('visite');
