@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Attachment;
-use App\Club;
+use App\Models\Attachment;
+use App\Models\Club;
 use Illuminate\Support\Facades\Auth;
 
 /**

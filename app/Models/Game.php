@@ -1,31 +1,31 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 /**
- * Class Club
+ * Class Game
  * @package App
  *
  * @author abellaali
  */
-class Club extends Model
+class Game extends Model
 {
     /**
      * The primary key for the model.
      *
      * @var string
      */
-    protected $primaryKey = 'club_id';
+    protected $primaryKey = 'game_id';
 
     /**
      * The table associated with the model.
      *
      * @var string
      */
-    protected $table = 'clubs';
+    protected $table = 'games';
 
     /**
      * The attributes that are mass assignable.
@@ -46,20 +46,20 @@ class Club extends Model
     ];
 
     /**
-     * The list of {@link User} that belong to the current {@link Club}
+     * The list of {@link User} that belong to the current {@link Game}
      *
      * @return BelongsToMany
      */
     public function users()
     {
         return $this->belongsToMany(User::class,
-            'clubs_users',
-            'club_id',
+            'games_users',
+            'game_id',
             'user_id');
     }
 
     /**
-     * The list of {@link Attachment} that belong to the current {@link Club}
+     * The list of {@link Attachment} that belong to the current {@link Game}
      *
      * @return BelongsToMany
      */

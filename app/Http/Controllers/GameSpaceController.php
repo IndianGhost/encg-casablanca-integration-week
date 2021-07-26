@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Attachment;
-use App\Game;
+use App\Models\Attachment;
+use App\Models\Game;
 use Illuminate\Support\Facades\Auth;
 
 /**
