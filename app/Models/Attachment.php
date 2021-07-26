@@ -43,7 +43,7 @@ class Attachment extends Model
      */
     public static $rules = [
         'title' => 'required|unique:attachments',
-        'category' => 'required', //TODO add `Illuminate\Validation\Rule::in(['LOGO', 'IMAGE', 'VIDEO', 'OTHER'])`
+        'category' => 'required',
         'path' => 'required|string|max:255',
     ];
 
