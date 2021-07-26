@@ -43,7 +43,7 @@ class Attachment extends Model
      */
     public static $rules = [
         'title' => 'required|unique:attachments',
-        'category' => 'required', //To add `Illuminate\Validation\Rule::in(['LOGO', 'IMAGE', 'VIDEO', 'OTHER'])`
+        'category' => 'required', //TODO add `Illuminate\Validation\Rule::in(['LOGO', 'IMAGE', 'VIDEO', 'OTHER'])`
         'path' => 'required|string|max:255',
     ];
 
@@ -65,5 +65,21 @@ class Attachment extends Model
     public function game()
     {
         return $this->belongsTo(Game::class);
+    }
+
+    public function getAll()
+    {
+        return static::all();
+    }
+
+    public function findAttachment($id)
+    {
+        return static::find($id);
+    }
+
+
+    public function deleteAttachment($id)
+    {
+        return static::find($id)->delete();
     }
 }

@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Attachment;
-use App\Models\Club;
+use App\Models\Enums\CategoryEnum;
+use App\Repositories\Attachment\AttachmentRepositoryInterface;
+use App\Repositories\Club\ClubRepositoryInterface;
 use Illuminate\Support\Facades\Auth;
 
 /**
@@ -17,12 +18,16 @@ class ClubsSpaceController extends Controller
     /**
      * Create a new controller instance.
      *
-     * @return void
+     * @param AttachmentRepositoryInterface $attachmentRepositoryInterface
+     * @param ClubRepositoryInterface $clubRepositoryInterface
      */
-    public function __construct()
+    public function __construct(AttachmentRepositoryInterface $attachmentRepositoryInterface,
+                                ClubRepositoryInterface $clubRepositoryInterface)
     {
         $this->middleware('auth');
         $this->middleware('checkUserTel');
+        $this->attachment = $attachmentRepositoryInterface;
+        $this->club = $clubRepositoryInterface;
     }
 
     /**
@@ -33,16 +38,7 @@ class ClubsSpaceController extends Controller
     public function club_space()
     {
         $viewPath = 'pages.clubs-space';
-
-        $clubs = Club::get();
-
-        foreach ($clubs as $club) {
-            $attachment = Attachment::where('category', 'AREA_HOVER_LOGO')
-                ->where('club_id', $club->club_id)
-                ->first();
-            $club->area_hover_logo = $attachment->path;
-        }
-
+        $clubs = $this->clubsToBeDisplayedInClubSpace();
         return view($viewPath, compact('clubs'));
     }
 
@@ -54,34 +50,47 @@ class ClubsSpaceController extends Controller
     public function club_stand($id)
     {
         $viewPath = 'pages.club-stand';
-
-        $club = Club::find($id);
-
+        $club = $this->club->find($id);
         $isMember = $club->users->contains(Auth::id());
-
-        $attachments = Attachment::where('club_id', $id)->get();
-
-        foreach ($attachments as $attachment) {
-            switch ($attachment->category) {
-                case 'STAND_FOREGROUND':
-                    $club->stand_foreground = $attachment->path;
-                    break;
-                case 'STAND_PRESENTATION_IMG':
-                    $club->stand_presentation_img = $attachment->path;
-                    break;
-                case 'STAND_VIDEO':
-                    $club->stand_video = $attachment->path;
-                    break;
-                case 'STAND_DOCUMENT':
-                    $club->stand_document = $attachment->path;
-                    break;
-            }
-        }
+        $this->prepareAttachmentsOfClubStand($club);
 
         return view($viewPath)
             ->with([
                 'club' => $club,
                 'isMember' => $isMember
             ]);
+    }
+
+    private function clubsToBeDisplayedInClubSpace()
+    {
+        $clubs = $this->club->getAll();
+        foreach ($clubs as $club) {
+            $attachment = $this->attachment
+                ->findByCategoryAndClubId(CategoryEnum::AREA_HOVER_LOGO, $club->club_id)
+                ->first();
+            $club->area_hover_logo = $attachment->path;
+        }
+        return $clubs;
+    }
+
+    private function prepareAttachmentsOfClubStand($club)
+    {
+        $attachments = $this->attachment->findByClubId($club->club_id);
+        foreach ($attachments as $attachment) {
+            switch ($attachment->category) {
+                case CategoryEnum::STAND_FOREGROUND:
+                    $club->stand_foreground = $attachment->path;
+                    break;
+                case CategoryEnum::STAND_PRESENTATION_IMG:
+                    $club->stand_presentation_img = $attachment->path;
+                    break;
+                case CategoryEnum::STAND_VIDEO:
+                    $club->stand_video = $attachment->path;
+                    break;
+                case CategoryEnum::STAND_DOCUMENT:
+                    $club->stand_document = $attachment->path;
+                    break;
+            }
+        }
     }
 }

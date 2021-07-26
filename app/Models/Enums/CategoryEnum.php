@@ -1,0 +1,15 @@
+<?php
+
+
+namespace App\Models\Enums;
+
+
+class CategoryEnum
+{
+    const AREA_HOVER_LOGO = 'AREA_HOVER_LOGO';
+    const GAME_PRESENTATION_IMG = 'GAME_PRESENTATION_IMG';
+    const STAND_DOCUMENT = 'STAND_DOCUMENT';
+    const STAND_FOREGROUND = 'STAND_FOREGROUND';
+    const STAND_PRESENTATION_IMG = 'STAND_PRESENTATION_IMG';
+    const STAND_VIDEO = 'STAND_VIDEO';
+}

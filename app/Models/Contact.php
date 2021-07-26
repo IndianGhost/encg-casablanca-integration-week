@@ -54,4 +54,20 @@ class Contact extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function getAll()
+    {
+        return static::all();
+    }
+
+    public function findContact($id)
+    {
+        return static::find($id);
+    }
+
+
+    public function deleteContact($id)
+    {
+        return static::find($id)->delete();
+    }
 }

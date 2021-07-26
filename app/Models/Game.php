@@ -67,4 +67,20 @@ class Game extends Model
     {
         return $this->belongsToMany(Attachment::class);
     }
+
+    public function getAll()
+    {
+        return static::all();
+    }
+
+    public function findGame($id)
+    {
+        return static::find($id);
+    }
+
+
+    public function deleteGame($id)
+    {
+        return static::find($id)->delete();
+    }
 }

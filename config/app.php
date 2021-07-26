@@ -175,6 +175,14 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        /**
+         * Customized service providers
+         */
+        App\Providers\AttachmentRepoServiceProvide::class,
+        App\Providers\ClubRepoServiceProvide::class,
+        App\Providers\ContactRepoServiceProvide::class,
+        App\Providers\GameRepoServiceProvide::class,
+        App\Providers\UserRepoServiceProvide::class,
     ],
 
     /*

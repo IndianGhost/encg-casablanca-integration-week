@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 /**
  * Class ContactController
  * @package App\Http\Controllers
@@ -12,5 +10,19 @@ use Illuminate\Http\Request;
  */
 class ContactController extends Controller
 {
-    //TODO: use this controller instead of temporary route in web.php & DO NOT FORGET middlewares !
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('checkUserTel');
+    }
+
+    /**
+     * Show the contact page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function index()
+    {
+        return view('pages.contact');
+    }
 }

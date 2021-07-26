@@ -67,4 +67,20 @@ class Club extends Model
     {
         return $this->belongsToMany(Attachment::class);
     }
+
+    public function getAll()
+    {
+        return static::all();
+    }
+
+    public function findClub($id)
+    {
+        return static::find($id);
+    }
+
+
+    public function deleteClub($id)
+    {
+        return static::find($id)->delete();
+    }
 }
