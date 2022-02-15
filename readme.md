@@ -1,72 +1,85 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
+## À propos de Welcome week
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+Welcome week est une application web interactive développée spécialement pour le compte de l'association des étudiants de l'école nationale de commerce et de gestion (ENCG) à casablanca
 
-## About Laravel
+### Démonstration
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Démonstration sur la page facebook de l'association des étudiants
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+[![VIDEO FACEBOOK](https://i.ibb.co/x8mRy5X/fb-thumbnail.png)](https://web.facebook.com/255749561139327/videos/754529468609163)
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+# Installation
 
-## Learning Laravel
+## Laravel
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Il s'agit d'une application développée en laravel. Alors, pour pouvoir l'installer en localhost il faut avoir quelques pré-requis :
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- Installer XAMPP (pour Windows, Linux ou OS X) : https://www.apachefriends.org/download.html
+- Installer Composer (pour Windows) : https://getcomposer.org/Composer-Setup.exe
+- Installer Composer (pour Linux ou OS X) : https://getcomposer.org/doc/00-intro.md#installation-linux-unix-macos
+- Mettre cette application au répertoire du XAMPP `htdocs`
+- Créer le fichier `.env` (vous pouvez copier/coller `.env.example`) et configurer sa base de données, par exemple :
+```
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=encgc
+DB_USERNAME=root
+DB_PASSWORD=
+```
+- Exécuter la commande :
+```
+php artisan key:generate
+```
+- Et enfin migrer la base de données via la commande :
+```
+php artisan migrate
+```
+Le serveur pourrait démarrer en exécutant :
+```
+php artisan serve
+```
 
-## Laravel Sponsors
+# Documentation fonctionnelle
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+Il s'agit d'une application dédiée spécialement à la semaine d'intégration de l'école nationale de commerce et de gestion (ENCG) à Casablanca qui cible toutes et tous les étudiants de l'école notamment les nouveaux arrivants.
+Et Elle permet chaque étudiant de :
+- S'authentifier via son email et un mot de passe.
+- Changer son mot de passe
+- S'inscrire aux clubs de l'école.
+- S'inscrire aux jeux de la semaine d'intégration.
+- Naviguer dans une galerie contenant les différents endroits de son école.
+- Regarder des séminaires.
+- Contacter l'association des étudiants via un formulaire 
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
-- [Hyper Host](https://hyper.host)
+Par conséquence, la base de données était déjà alimentée à partir d'un fichier excel contenant les données de tous les étudiants de l'école et il suffisait de remplir son email
+et son code national de l'étudiant (CNE) comme mot de passe par défaut pour que l'étudiant soit authentifié.
+Après, on laisse le laisse la possibilité de changer son mot de passe et on le pousse à remplir son numéro de téléphone qui sera obligatoire.
 
-## Contributing
+# Documentation technique
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### Modèle de données
 
-## Security Vulnerabilities
+![MODELE DONNEES](https://i.ibb.co/ZYQYNNT/CONCEPTION-BASE-DONNEE.png)
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+- Remarque 1 : les tables `migrations` et `password_resets` sont des tables du framework permtettant de gérer les migrations et la réinitialisation des mots de passe respectivement.
+- Remarque 2 : la table `attachments` est dédiée aux stockage des différents attachements vidéos et images..etc
 
-## License
+### Architecture du code source
 
-The Laravel framework is open-source software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+![CODE SOURCE](https://i.ibb.co/tPkgy1n/CODE-SOURCE.png)
+
+Le code source de l'application se base principalement sur deux designs patterns :
+
+- `MVC` : Model-View-Controller qui est imposé par le framework lui-même. Où, le modèle ici désigne les classes du répertoire `App\Models`
+et la vue désigne le côté frontend `\resources\views` et le contrôleur désigne le répertoire '\App\Http\Controllers'
+
+- `Repository design pattern` : implémenté dans le répertoire repositories, il s'agit d'une couche entre le modèle et le contrôleur permettant de centraliser les requêtes qui seront faites sur les entités de l'application
+si, la requête serait appliquée sur plusieurs entités. On la déclare dans `DefaultRepository`. Sinon, dans l'interface du repository concerné comme le cas de `AttachmentRepositoryInterface`.
+
+Pour plus d'information sur la création des Modèles/Vues/Contrôleurs ou encore les service providers, veuillez consulter la documentation officielle du framework : https://laravel.com/docs/5.8
+
+# Equipe
+
+- UI/UX design + Intégration : [Zakaria MRABTI](https://www.linkedin.com/in/zakaria-mrabti-ux-ui-designer/)
+- Développement Backend : [Achraf BELLAALI](https://www.linkedin.com/in/bellaali-achraf/)
